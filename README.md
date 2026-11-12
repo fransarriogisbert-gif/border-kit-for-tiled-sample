@@ -6,7 +6,7 @@ Compare an existing Tiled map before and after adding a two-pixel extruded borde
 
 ## Open the sample
 
-1. Download `Border-Kit-Free-Sample.zip` from this repository and extract it.
+1. [Download the free sample ZIP](Border-Kit-Free-Sample.zip?raw=true) and extract it.
 2. Open `original/sample.tmx` in [Tiled](https://www.mapeditor.org/).
 3. Open `bordered/sample.tmx` and compare the map, animated tile and collision object.
 4. Inspect the two PNG atlases. Each tile in the bordered sheet has its own edge pixels duplicated around it.
