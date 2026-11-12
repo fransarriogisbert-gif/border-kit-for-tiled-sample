@@ -21,6 +21,21 @@ For a tightly packed rectangular sheet with a two-pixel border, the new outer ma
 
 Extrusion can help with texture sampling across neighbouring tiles. Check the result in your game, since camera rounding, scaling and other renderer settings can also produce seams.
 
+## Do you need the paid converter?
+
+For a new map, or a single image you are happy to configure by hand, a free extruder may be enough. [Tile Extruder](https://github.com/sporadic-labs/tile-extruder#using-the-extruded-tileset) documents a PNG workflow followed by changing the image, margin and spacing in Tiled. [ToolPkg's tileset slicer](https://www.toolpkg.com/tileset-slicer) advertises free extrusion and TSX export. These are documented alternatives, not tools we have independently tested.
+
+Border Kit is a convenience option for an **existing external TSX**: it reads that file, replaces its image reference and geometry in a copy, and retains the tile metadata. It does not make extrusion itself exclusive, and it does not guarantee a seam-free game.
+
+Before choosing a workflow:
+
+- Keep the column count and tile order unchanged; changing either can change which artwork an existing tile ID selects.
+- Compare custom properties, animation frame IDs/durations and collision shapes after conversion.
+- Work in a project copy and keep the external TSX path unchanged when replacing it. Other assets may depend on relative paths.
+- Test in your engine at the camera zoom and filtering settings you actually use. A matching map in Tiled does not prove every rendering issue is fixed.
+
+[Tiled's tileset documentation](https://doc.mapeditor.org/en/stable/manual/editing-tilesets/) explains image grids, margin, spacing and per-tile information. The free sample above lets you inspect our output before spending anything.
+
 ## Convert your own PNG and TSX
 
 [Border Kit for Tiled is available for $4 on itch.io](https://frenkitchio.itch.io/border-kit-for-tiled). The paid download includes a Python CLI that converts the image and a copy of the external TSX together, a guide and regression checks. It supports single-sheet rectangular grids, Python 3.10+, Pillow 9.1+ and a filesystem supporting hard links. PNGs must be at most 8 bits per channel. The CLI was tested on Linux.
