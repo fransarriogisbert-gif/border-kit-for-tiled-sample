@@ -2,7 +2,9 @@
 
 Compare an existing Tiled map before and after adding a two-pixel extruded border to its tileset. The tile IDs, animation frames and collision objects remain attached to the same tiles.
 
-![Original grid beside the padded grid](cover.png)
+![Actual sample: original and extruded atlases, with the same painted map](border-kit-demo.png)
+
+The comparison above is rendered from the downloadable synthetic sample, not an editor screenshot. The four tile interiors and all 12 map cells match pixel for pixel at 0, 130 and 275 ms; the border changes the atlas layout. Open the sample in Tiled to inspect the animation and collision object yourself.
 
 ## Open the sample
 
